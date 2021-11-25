@@ -23,6 +23,7 @@ x64
 # R ###
 .Rhistory
 
+FlowNet2_checkpoint.pth.tar
 debug*
 checkpoints/
 datasets/
