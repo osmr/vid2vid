@@ -43,9 +43,19 @@ Pytorch implementation for high-resolution (e.g., 2048x1024) photorealistic vide
 
 ## Getting Started
 
-### Installation (extra)
+### Testing repo
 ```
+pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt -f https://download.pytorch.org/whl/cu113/torch_stable.html
+
+python scripts/download_datasets.py
+python scripts/face/download_models.py
+bash ./scripts/face/test_512.sh
+
+python scripts/download_flownet2.py
+python scripts/download_models_flownet2.py
+bash ./scripts/face/train_512.sh
+python train.py --name=edge2face_512 --dataroot=datasets/face/ --dataset_mode=face --input_nc=15 --loadSize 512 --num_D=3 --gpu_ids=0 --n_gpus_gen=-1 --niter=20 --niter_decay=20 --n_frames_total=5
 ```
 
 ### Installation
